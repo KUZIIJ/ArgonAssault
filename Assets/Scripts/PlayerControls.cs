@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    [SerializeField] float throwSpeed = 1f;
     // Update is called once per frame
     void Update()
     {
@@ -17,7 +12,10 @@ public class PlayerControls : MonoBehaviour
     }
     void PlayerInput()
     {
-        float horizontalThrow = Input.GetAxis("Horizontal");
-        float verticalThrow = Input.GetAxis("Vertical");
+        float xThrow = Input.GetAxis("Horizontal");
+        float yThrow = Input.GetAxis("Vertical");
+        //transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
+        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z+0.2f*throwSpeed*Time.deltaTime);
+
     }
 }
