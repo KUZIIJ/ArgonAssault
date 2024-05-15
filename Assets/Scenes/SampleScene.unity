@@ -137,12 +137,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 2099529989}
     m_Modifications:
     - target: {fileID: 3333151131472702938, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
+      propertyPath: throwSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333151131472702938, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
       propertyPath: fire.m_Name
       value: Fire
       objectReference: {fileID: 0}
     - target: {fileID: 3333151131472702938, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
+      propertyPath: rollMultiplyer
+      value: 3.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333151131472702938, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
       propertyPath: movement.m_Name
       value: Movement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333151131472702938, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
+      propertyPath: pitchMultiplyer
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3333151131472702938, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
       propertyPath: fire.m_SingletonActionBindings.Array.size
@@ -334,7 +346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7726446737519067541, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7726446737519067541, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
       propertyPath: m_LocalRotation.x
@@ -342,11 +354,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7726446737519067541, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7726446737519067541, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7726446737519067541, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -354,7 +366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7726446737519067541, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 270
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7726446737519067541, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -598,10 +610,10 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: 1942800269202386453, guid: 8e6bfa88e1cb65d4cbba8270db57913f, type: 2}
-    value: {fileID: 2099529988}
   - key: {fileID: -7812842057817608862, guid: 8e6bfa88e1cb65d4cbba8270db57913f, type: 2}
     value: {fileID: 2060396234}
+  - key: {fileID: 7049924456291972748, guid: 8e6bfa88e1cb65d4cbba8270db57913f, type: 2}
+    value: {fileID: 2099529988}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &870992079
@@ -704,13 +716,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.70713264, z: -0, w: 0.707081}
-  m_LocalPosition: {x: 24.5, y: 8.030001, z: 0.14710999}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.11, z: -19.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2099529989}
-  m_LocalEulerAnglesHint: {x: 0, y: -90.004, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1157324671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,8 +1131,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099529987}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 591.73, y: 2, z: 155.53288}
+  m_LocalRotation: {x: 0, y: -0.717171, z: -0, w: 0.69689727}
+  m_LocalPosition: {x: 591.64, y: 2, z: 158.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
