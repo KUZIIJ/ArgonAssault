@@ -4,25 +4,48 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
-    [SerializeField] float throwSpeed = 50f;
-    [SerializeField] float rollMultiplyer = 2f;
-    [SerializeField] float pitchAngle = 30f;
-    // Update is called once per frame
+    [SerializeField] float controlSpeed = 10f;
+    [SerializeField] float xRange = 10f;
+    [SerializeField] float yRangeMax = 19f;
+    [SerializeField] float yRangeMin = -2f;
+    [SerializeField] float positionPitchFactor = -2f;
+    [SerializeField] float controlPitchFactor = -10f;
+    [SerializeField] float positionYawFactor = 2f;
+    [SerializeField] float controlRollFactor = -20f;
+
+    float xThrow, yThrow;
+
     void Update()
     {
-        PlayerInput();
+        ProcessTranslation();
+        ProcessRotation();
     }
-    void PlayerInput()
-    {
-        float xThrow = Input.GetAxis("Horizontal");
-        float yThrow = Input.GetAxis("Vertical");
-        float xOffset = xThrow * Time.deltaTime * throwSpeed;
-        float yOffset = yThrow * Time.deltaTime * throwSpeed;
-        float yAngleOffset = yThrow * Time.deltaTime;
-        float newXPos = Mathf.Clamp(transform.localPosition.x + xOffset, -15f, 15f);
-        float newYPos = Mathf.Clamp(transform.localPosition.y + yOffset, -2f, 14f);
 
-        transform.localPosition = new Vector3(newXPos, newYPos, transform.localPosition.z);
-        transform.localRotation = Quaternion.Euler(yAngleOffset * -pitchAngle, 0, newXPos * rollMultiplyer);
+    void ProcessRotation()
+    {
+        float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;
+        float pitchDueToControlThrow = yThrow * controlPitchFactor;
+
+        float pitch = pitchDueToPosition + pitchDueToControlThrow;
+        float yaw = transform.localPosition.x * positionYawFactor;
+        float roll = xThrow * controlRollFactor;
+
+        transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+    }
+
+    void ProcessTranslation()
+    {
+        xThrow = Input.GetAxis("Horizontal");
+        yThrow = Input.GetAxis("Vertical");
+
+        float xOffset = xThrow * Time.deltaTime * controlSpeed;
+        float rawXPos = transform.localPosition.x + xOffset;
+        float clampedXPos = Mathf.Clamp(rawXPos, -xRange, xRange);
+
+        float yOffset = yThrow * Time.deltaTime * controlSpeed;
+        float rawYPos = transform.localPosition.y + yOffset;
+        float clampedYPos = Mathf.Clamp(rawYPos, yRangeMin, yRangeMax);
+
+        transform.localPosition = new Vector3(clampedXPos, clampedYPos, transform.localPosition.z);
     }
 }

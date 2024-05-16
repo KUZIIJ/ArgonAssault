@@ -137,12 +137,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 2099529989}
     m_Modifications:
     - target: {fileID: 3333151131472702938, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
+      propertyPath: yRangeMax
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333151131472702938, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
+      propertyPath: yRangeMin
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333151131472702938, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
       propertyPath: throwSpeed
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3333151131472702938, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
       propertyPath: fire.m_Name
       value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333151131472702938, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
+      propertyPath: controlSpeed
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3333151131472702938, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
       propertyPath: rollMultiplyer
@@ -154,7 +166,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3333151131472702938, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
       propertyPath: pitchMultiplyer
-      value: 300
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3333151131472702938, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
+      propertyPath: controlPitchFactor
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 3333151131472702938, guid: 9d4c0cad57e74894b9b8faed93686b15, type: 3}
       propertyPath: fire.m_SingletonActionBindings.Array.size
